@@ -1,4 +1,4 @@
-import { Model, INTEGER, BOOLEAN, IntegerDataType } from 'sequelize';
+import { Model, INTEGER, BOOLEAN } from 'sequelize';
 import db from '.';
 // import OtherModel from './OtherModel';
 
@@ -17,7 +17,7 @@ Match.init({
   homeTeamGoals: INTEGER,
   awayTeam: INTEGER,
   awayTeamGoals: INTEGER,
-  inProgress: BOOLEAN
+  inProgress: BOOLEAN.key,
 }, {
   underscored: true,
   sequelize: db,
@@ -26,7 +26,7 @@ Match.init({
 });
 
 /**
-  * `Workaround` para aplicar as associations em TS: 
+  * `Workaround` para aplicar as associations em TS:
   * Associations 1:N devem ficar em uma das instâncias de modelo
   * */
 
