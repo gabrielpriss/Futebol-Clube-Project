@@ -1,5 +1,5 @@
-import jwt, { SignOptions } from 'jsonwebtoken';
-import fs from 'fs';
+import * as jwt from 'jsonwebtoken';
+import * as fs from 'fs';
 import UserService from './UserService';
 import { ILogin, IToken } from '../interfaces/ILogin';
 
@@ -12,7 +12,7 @@ export default class loginService {
       return user;
     }
 
-    const jwtConfig: SignOptions = { expiresIn: '7d', algorithm: 'HS256' };
+    const jwtConfig: jwt.SignOptions = { expiresIn: '7d', algorithm: 'HS256' };
 
     const secret = fs.readFileSync('jwt.evaluation.key', 'utf8');
 

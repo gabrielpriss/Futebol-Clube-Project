@@ -1,16 +1,15 @@
 import * as express from 'express';
-import Routes from './database/routes/Routes'
+import cors from 'cors';
+import LoginRouter from './database/routes/LoginRouter';
+import ErrorMiddleware from './middlewares/ErrorMiddlewares';
 
 class App {
   public app: express.Express;
 
-  public router: Routes;
-
-
   constructor() {
     this.app = express();
     this.config();
-    this.router = new Routes(this.app);
+
   }
 
   private config(): void {
@@ -21,8 +20,11 @@ class App {
       next();
     };
 
+    this.app.use(cors());
     this.app.use(accessControl);
     this.app.use(express.json());
+    this.app.use(LoginRouter);
+    this.app.use(ErrorMiddleware.management)
     this.app.use(express.urlencoded({ extended: false }));
   }
 
