@@ -1,13 +1,16 @@
 import * as express from 'express';
+import Routes from './database/routes/Routes'
 
 class App {
   public app: express.Express;
-  // ...
+
+  public router: Routes;
+
 
   constructor() {
     this.app = express();
     this.config();
-    // ...
+    this.router = new Routes(this.app);
   }
 
   private config(): void {
@@ -20,6 +23,7 @@ class App {
 
     this.app.use(accessControl);
     this.app.use(express.json());
+    this.app.use(express.urlencoded({ extended: false }));
   }
 
   // ...
