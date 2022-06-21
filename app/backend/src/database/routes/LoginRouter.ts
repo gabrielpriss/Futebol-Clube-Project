@@ -1,15 +1,8 @@
 import { Router } from 'express';
-import { userLogin } from '../controllers/LoginController.ts';
+import LoginController from '../controllers/LoginController';
 
-export default class LoginRouter {
-    private _router: Router;
+const router = Router();
 
-    constructor() {
-        this._router = Router();
-        this.RouteLogin();
-    }
+router.post('/login', LoginController.login);
 
-    private RouteLogin(): void {
-        this._router.post('/', userLogin);
-    }
-}
+export default router;
