@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import LoginController from '../controllers/LoginController';
-import JwtMiddleware from '../middlewares;'
+import JwtMiddleware from '../../middlewares/JwtMiddleware';
 import LoginMiddleware from '../../middlewares/LoginMiddleware';
 
 const router = Router();

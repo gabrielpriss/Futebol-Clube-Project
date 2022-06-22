@@ -1,5 +1,5 @@
-import * as express from 'express';
-import * as cors from 'cors';
+import express from 'express';
+import cors from 'cors';
 import LoginRouter from './database/routes/LoginRouter';
 import ErrorMiddleware from './middlewares/ErrorMiddlewares';
 
