@@ -1,5 +1,5 @@
 import * as express from 'express';
-import cors from 'cors';
+import * as cors from 'cors';
 import LoginRouter from './database/routes/LoginRouter';
 import ErrorMiddleware from './middlewares/ErrorMiddlewares';
 
@@ -9,7 +9,6 @@ class App {
   constructor() {
     this.app = express();
     this.config();
-
   }
 
   private config(): void {
@@ -24,8 +23,7 @@ class App {
     this.app.use(accessControl);
     this.app.use(express.json());
     this.app.use(LoginRouter);
-    this.app.use(ErrorMiddleware.management)
-    this.app.use(express.urlencoded({ extended: false }));
+    this.app.use(ErrorMiddleware.management);
   }
 
   // ...

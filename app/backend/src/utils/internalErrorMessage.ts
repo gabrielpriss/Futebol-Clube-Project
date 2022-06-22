@@ -8,5 +8,8 @@ export default function errorVerify(e: unknown) {
     message = 'Some internal error happened';
   }
 
-  return ({ type: 'internalServicerError', message, })
+  return ({
+    type: 'internalServicerError',
+    message,
+  });
 }

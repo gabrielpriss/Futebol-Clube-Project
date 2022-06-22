@@ -21,8 +21,6 @@ export default class loginService {
     const token = jwt.sign({ data: user }, secret, jwtConfig);
 
     const { id, username, role } = user;
-
     return { user: { id, username, role, email }, token };
-
   }
 }
