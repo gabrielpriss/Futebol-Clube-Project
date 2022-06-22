@@ -9,7 +9,7 @@ export default function errorVerify(e: unknown) {
   }
 
   return ({
-    type: 'internalServicerError',
+    type: 'internalServerError',
     message,
   });
 }
