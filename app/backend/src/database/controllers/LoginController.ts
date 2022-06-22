@@ -13,8 +13,8 @@ export default class LoginController {
       if (!result) {
         return next(({
           type: 'unauthorized',
-          message: 'Incorrect email or password'
-        }))
+          message: 'Incorrect email or password',
+        }));
       }
       return res.status(StatusCodes.OK).json({ ...result });
     } catch (e) {
@@ -26,9 +26,8 @@ export default class LoginController {
     try {
       const { user } = req;
 
-      return res.status(StatusCodes.OK).send(user)
-    }
-    catch(e) {
+      return res.status(StatusCodes.OK).send(user);
+    } catch (e) {
       return next(errorVerify(e));
     }
   }

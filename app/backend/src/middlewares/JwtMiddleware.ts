@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import * as jwt from 'jsonwebtoken';
 import * as fs from 'fs';
 import UserService from '../database/services/UserService';
-import errorVerify from '../utils/internalErrorMessage'
+import errorVerify from '../utils/internalErrorMessage';
 
 export default class JwtMiddleware {
   static async validate(req: Request, _res: Response, next: NextFunction) {
@@ -24,8 +24,7 @@ export default class JwtMiddleware {
         next();
       });
     } catch (e) {
-      return next(errorVerify(e))
+      return next(errorVerify(e));
     }
-
   }
 }
