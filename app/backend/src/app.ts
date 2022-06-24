@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import LoginRouter from './database/routes/LoginRouter';
+import TeamRouter from './database/routes/TeamRouter';
 import ErrorMiddleware from './middlewares/ErrorMiddlewares';
 
 class App {
@@ -23,6 +24,7 @@ class App {
     this.app.use(accessControl);
     this.app.use(express.json());
     this.app.use(LoginRouter);
+    this.app.use(TeamRouter);
     this.app.use(ErrorMiddleware.management);
   }
 

@@ -1,4 +1,4 @@
-import * as bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 import { ILogin } from '../interfaces/ILogin';
 import { IUser } from '../interfaces/IUser';
