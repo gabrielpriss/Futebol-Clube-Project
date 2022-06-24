@@ -8,12 +8,13 @@ export default class LoginController {
   static async login(req: Request, res: Response, next: NextFunction) {
     try {
       const { email, password } = req.body as ILogin;
+      console.log(email);
       const result = await LoginService.getToken({ email, password });
 
       if (!result) {
         return next(({
           type: 'unauthorized',
-          message: 'Incorrect email or password',
+          message: 'Incorrect email or passworda',
         }));
       }
       return res.status(StatusCodes.OK).json({ ...result });

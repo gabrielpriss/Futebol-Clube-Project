@@ -21,8 +21,8 @@ class App {
     };
 
     this.app.use(cors());
-    this.app.use(accessControl);
     this.app.use(express.json());
+    this.app.use(accessControl);
     this.app.use(LoginRouter);
     this.app.use(TeamRouter);
     this.app.use(ErrorMiddleware.management);

@@ -12,12 +12,14 @@ export default class LoginMiddleware {
         email: Joi.string().email().required(),
         password: Joi.string().min(7).required(),
       }).validate({ email, password });
-      if (error && (
-        error.details[0].type.includes('required') || error.details[0].type.includes('empty'))
-      ) {
-        return next({ type: 'badRequest', message: 'All fields must be filled' });
+      if (error) {
+        if (error.details[0].type.includes('required')
+        || error.details[0].type.includes('empty')) {
+          return next({ type: 'badRequest', message: 'All fields must be filled' });
+        }
+        return next({ type: 'unauthorized', message: 'Incorrect email or password' });
       }
-      return next({ type: 'unauthorized', message: 'Incorrect email or password' });
+      return next();
     } catch (error) {
       return next(errorVerify(error));
     }
