@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import * as jwt from 'jsonwebtoken';
-import * as fs from 'fs';
+import jwt from 'jsonwebtoken';
+import fs from 'fs';
 import UserService from '../database/services/UserService';
 import errorVerify from '../utils/internalErrorMessage';
 

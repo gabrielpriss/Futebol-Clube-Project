@@ -6,7 +6,6 @@ import { ILogin, IToken } from '../interfaces/ILogin';
 export default class LoginService {
   static async getToken(account: ILogin): Promise<IToken | null> {
     const { email, password } = account;
-    
     const user = await UserService.getOne({ email, password });
 
     if (!user) {
