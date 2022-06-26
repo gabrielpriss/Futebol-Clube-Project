@@ -3,6 +3,7 @@ import cors from 'cors';
 import LoginRouter from './database/routes/LoginRouter';
 import TeamRouter from './database/routes/TeamRouter';
 import ErrorMiddleware from './middlewares/ErrorMiddlewares';
+import MatchRouter from './database/routes/MatchRouter';
 
 class App {
   public app: express.Express;
@@ -25,6 +26,7 @@ class App {
     this.app.use(accessControl);
     this.app.use(LoginRouter);
     this.app.use(TeamRouter);
+    this.app.use(MatchRouter);
     this.app.use(ErrorMiddleware.management);
   }
 
