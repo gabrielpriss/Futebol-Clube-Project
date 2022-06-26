@@ -46,7 +46,7 @@ export default class MatchController {
 
       await MatchService.finishMatch(Number(id));
 
-      return res.status(StatusCodes.OK).json({ message: 'Finished'});
+      return res.status(StatusCodes.OK).json({ message: 'Finished' });
     } catch (e) {
       return next(errorVerify(e));
     }
@@ -57,11 +57,11 @@ export default class MatchController {
       const { id } = req.params;
       const {
         homeTeamGoals,
-        awayTeamGoals
+        awayTeamGoals,
       } = req.body as { homeTeamGoals: number, awayTeamGoals: number };
-        await MatchService.updateGoals(homeTeamGoals, awayTeamGoals, Number(id));
-        return res.status(StatusCodes.OK).json({ message: 'Finished'});
-    } catch(e) {
+      await MatchService.updateGoals(homeTeamGoals, awayTeamGoals, Number(id));
+      return res.status(StatusCodes.OK).json({ message: 'Finished' });
+    } catch (e) {
       return next(errorVerify(e));
     }
   }

@@ -1,4 +1,4 @@
-import { BOOLEAN, Model, INTEGER } from 'sequelize';
+import { Model, INTEGER } from 'sequelize';
 import db from '.';
 import TeamModel from './TeamModel';
 
@@ -42,7 +42,7 @@ MatchModel.init({
     allowNull: false,
   },
   inProgress: {
-    type: BOOLEAN,
+    type: INTEGER,
     allowNull: false,
   },
 }, {
@@ -50,7 +50,6 @@ MatchModel.init({
   underscored: true,
   modelName: 'matches',
   timestamps: false });
-
 
 TeamModel.hasMany(MatchModel, { foreignKey: 'homeTeam', as: 'teamHome' });
 TeamModel.hasMany(MatchModel, { foreignKey: 'awayTeam', as: 'teamAway' });

@@ -1,8 +1,8 @@
-import IError from "../interfaces/IError";
+import IError from '../interfaces/IError';
 import { ICompleteMatch, IMatch } from '../interfaces/IMatch';
 import MatchModel from '../models/MatchModel';
 import TeamModel from '../models/TeamModel';
-import TeamService from "./TeamService";
+import TeamService from './TeamService';
 
 export default class MatchService {
   static async getAll(): Promise<ICompleteMatch[]> {
@@ -71,4 +71,3 @@ export default class MatchService {
     await MatchModel.update({ homeTeamGoals, awayTeamGoals }, { where: { id } });
   }
 }
-

@@ -14,7 +14,7 @@ export default class LoginController {
       if (!result) {
         return next(({
           type: 'unauthorized',
-          message: 'Incorrect email or passworda',
+          message: 'Incorrect email or password',
         }));
       }
       return res.status(StatusCodes.OK).json({ ...result });
