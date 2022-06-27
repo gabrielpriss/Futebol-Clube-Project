@@ -4,7 +4,7 @@ import errorVerify from '../utils/internalErrorMessage';
 import { ILogin } from '../database/interfaces/ILogin';
 
 export default class LoginMiddleware {
-  static entriesValidation(req: Request, _res: Response, next: NextFunction) {
+  static entriesValidation(req: Request, _res:Response, next: NextFunction) {
     try {
       const { email, password } = req.body as ILogin;
 
@@ -12,6 +12,7 @@ export default class LoginMiddleware {
         email: Joi.string().email().required(),
         password: Joi.string().min(7).required(),
       }).validate({ email, password });
+
       if (error) {
         if (error.details[0].type.includes('required')
         || error.details[0].type.includes('empty')) {
@@ -19,6 +20,7 @@ export default class LoginMiddleware {
         }
         return next({ type: 'unauthorized', message: 'Incorrect email or password' });
       }
+
       return next();
     } catch (error) {
       return next(errorVerify(error));
