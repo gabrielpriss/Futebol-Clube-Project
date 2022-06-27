@@ -23,13 +23,14 @@ export default class LoginController {
     }
   }
 
-  static async validate(req: Request, res: Response, next: NextFunction) {
+  static async validate(req: Request, res:Response, next:NextFunction) {
     try {
       const { user } = req;
+      console.log(user);
 
       return res.status(StatusCodes.OK).send(user);
-    } catch (e) {
-      return next(errorVerify(e));
+    } catch (error) {
+      return next(errorVerify(error));
     }
   }
 }
