@@ -1,6 +1,5 @@
 import sinon from 'sinon';
 import chai from 'chai';
-
 import chaiHttp from 'chai-http';
 import teams from './mocks/teams';
 
