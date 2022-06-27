@@ -5,7 +5,7 @@ import LoginMiddleware from '../../middlewares/LoginMiddleware';
 
 const router = Router();
 
-router.get('./login/validate', JwtMiddleware.validate, LoginController.validate);
+router.get('/login/validate', JwtMiddleware.validate, LoginController.validate);
 router.post('/login', LoginMiddleware.entriesValidation, LoginController.login);
 
 export default router;
