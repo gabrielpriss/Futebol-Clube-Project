@@ -44,3 +44,5 @@ export { App };
 
 // A execução dos testes de cobertura depende dessa exportação
 export const { app } = new App();
+
+// feito com ajuda/consulta ao repositório do Gabriel Pinheiro https://github.com/tryber/sd-016-b-trybe-futebol-clube/pull/50/commits
