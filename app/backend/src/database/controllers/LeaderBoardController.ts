@@ -1,7 +1,7 @@
-import { Request, Response, NextFunction } from "express";
-import { StatusCodes } from "http-status-codes";
-import errorVerify from "../../utils/internalErrorMessage";
-import LeaderBoardService from '../services/LeaderBoardService'
+import { Request, Response, NextFunction } from 'express';
+import { StatusCodes } from 'http-status-codes';
+import errorVerify from '../../utils/internalErrorMessage';
+import LeaderBoardService from '../services/LeaderBoardService';
 
 export default class LeaderBoardController {
   static async getAllByPlace(req: Request, res: Response, next: NextFunction) {
