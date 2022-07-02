@@ -31,7 +31,7 @@ export default class MatchController {
 
       const { type } = result as IError;
       if (type) {
-        return next(result);
+        return (res.status(404).json({ message: 'There is no team with such id!' }));
       }
 
       return res.status(StatusCodes.CREATED).json(result);
