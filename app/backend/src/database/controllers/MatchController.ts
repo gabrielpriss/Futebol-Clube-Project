@@ -21,7 +21,7 @@ export default class MatchController {
     }
   }
 
-  static async create(req: Request, res: Response, next: NextFunction) {
+  static async create(req: Request, res:Response, next:NextFunction) {
     try {
       const { homeTeam, awayTeam, homeTeamGoals, awayTeamGoals, inProgress } = req.body;
 
@@ -30,13 +30,17 @@ export default class MatchController {
       );
 
       const { type } = result as IError;
+
       if (type) {
-        return (res.status(404).json({ message: 'There is no team with such id!' }));
+        if (type === 'notFound') {
+          return res.status(404).json({ message: 'There is no team with such id!' });
+        }
+        return next(result);
       }
 
       return res.status(StatusCodes.CREATED).json(result);
-    } catch (e) {
-      return next(errorVerify(e));
+    } catch (error) {
+      return next(errorVerify(error));
     }
   }
 
