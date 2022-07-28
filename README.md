@@ -42,9 +42,9 @@ O projeto é composto de 4 entidades em sua estrutura:
   <summary><strong>Rodando o projeto</strong></summary><br />
 
   1. Clone o repositório
-    * `git clone https://github.com/tryber/sd-016-b-trybe-futebol-clube.git`.
-    * Entre na pasta do repositório que você acabou de clonar:
-      * `cd sd-016-b-trybe-futebol-clube`
+    * `git clone https://github.com/gabrielpriss/Futebol-Clube-Project.git`.
+    * Entre na pasta do repositório:
+      * `cd https://github.com/gabrielpriss/Futebol-Clube-Project.git`
 
   2. Instale as dependências
     * `npm install
