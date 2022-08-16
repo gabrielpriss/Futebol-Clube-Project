@@ -5,7 +5,7 @@ Trybe Futebol Clube foi um projeto back-end individual desenvolvido durante o cu
 # Detalhes
 
 <details>
-  <summary><strong>👨‍💻 O que foi desenvolvido</strong></summary><br />
+  <summary><strong>💻 O que foi desenvolvido</strong></summary><br />
 
   O `TFC` é um site informativo sobre partidas e classificações de futebol! ⚽️
 
@@ -20,25 +20,6 @@ Trybe Futebol Clube foi um projeto back-end individual desenvolvido durante o cu
 </details>
 
 <details>
-  <summary><strong> Estrutura do projeto</strong></summary><br />
-
-O projeto é composto de 4 entidades em sua estrutura:
-
-1️⃣ **Banco de dados:**
-  - Tem o papel de fornecer dados para o serviço _back-end_. Durante os testes sempre vai ser acessado pelo `sequelize` e via porta `3002` do `localhost`; 
-
-2️⃣ **Back-end:**
- - Roda na porta `3001`, pois o front-end faz requisições para ele na porta `3001` por padrão;
- - A aplicação é inicializada a partir do arquivo `app/backend/src/server.ts`;
-  
-3️⃣ **Front-end:**
-  - Não foi desenvolvido por mim, roda localmente no site `http://localhost:3000/`; 
-  - Esse site faz requisições para o back-end na porta `3001` para acessar e modificar os dados do banco.
-
-4️⃣ **Docker:**
-  - O Docker entra com o papel de unir todas as partes e subir um projeto completo com um comando só via o `docker-compose`;
-
-<details>
   <summary><strong>Rodando o projeto</strong></summary><br />
 
   1. Clone o repositório
@@ -47,7 +28,7 @@ O projeto é composto de 4 entidades em sua estrutura:
       * `cd https://github.com/gabrielpriss/Futebol-Clube-Project.git`
 
   2. Instale as dependências
-    * `npm install
+    * `npm install`
   
   3. Variáveis de ambiente
     
@@ -103,7 +84,31 @@ Na sua máquina você deve ter:
 
 </details>
 
+<details>
+  <summary><strong> Estrutura do projeto</strong></summary><br />
+
+O projeto é composto de 4 entidades em sua estrutura:
+
+1️⃣ **Banco de dados:**
+  - Tem o papel de fornecer dados para o serviço _back-end_. Durante os testes sempre vai ser acessado pelo `sequelize` e via porta `3002` do `localhost`; 
+
+2️⃣ **Back-end:**
+ - Roda na porta `3001`, pois o front-end faz requisições para ele na porta `3001` por padrão;
+ - A aplicação é inicializada a partir do arquivo `app/backend/src/server.ts`;
+  
+3️⃣ **Front-end:**
+  - Não foi desenvolvido por mim, roda localmente no site `http://localhost:3000/`; 
+  - Esse site faz requisições para o back-end na porta `3001` para acessar e modificar os dados do banco.
+
+4️⃣ **Docker:**
+  - O Docker entra com o papel de unir todas as partes e subir um projeto completo com um comando só via o `docker-compose`;
+  
+ </details>
+
+<details>
+
 <br/>
+<summary><strong>Funções do Projeto</strong></summary><br />
 	
 # Funções do Projeto
 
