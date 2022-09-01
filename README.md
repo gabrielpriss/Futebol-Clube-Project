@@ -25,7 +25,7 @@ Trybe Futebol Clube foi um projeto back-end individual desenvolvido durante o cu
   1. Clone o repositório
     * `git clone https://github.com/gabrielpriss/Futebol-Clube-Project.git`.
     * Entre na pasta do repositório:
-      * `cd https://github.com/gabrielpriss/Futebol-Clube-Project.git`
+      * `cd Futebol-Clube-Project`
 
   2. Instale as dependências
     * `npm install`
@@ -59,12 +59,12 @@ Trybe Futebol Clube foi um projeto back-end individual desenvolvido durante o cu
 	* `exemplo`
 
 	* sudo service mysql start
-  * sudo service docker start
+  	* sudo service docker start
 
   5. Iniciar a aplicação
 
 	* Na pasta raiz rodar o script responsável por iniciar o front e o back-end
-	* `npm run compose up`
+	* `npm run compose:up`
 
 </details>
 
